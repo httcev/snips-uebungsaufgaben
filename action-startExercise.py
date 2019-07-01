@@ -56,7 +56,7 @@ def action_wrapper(hermes, intentMessage, conf):
         line = random_line(file)
         file.close()
 
-        //result_sentence = "Übungsaufgabe zu {}".format(str(lecture))  # The response that will be said out loud by the TTS engine.
+        #result_sentence = "Übungsaufgabe zu {}".format(str(lecture))  # The response that will be said out loud by the TTS engine.
         result_sentence = line
 
     else:
