@@ -52,7 +52,7 @@ def action_wrapper(hermes, intentMessage, conf):
     if len(intentMessage.slots.lecture) > 0:
         lecture = intentMessage.slots.lecture.first().value # We extract the value from the slot "lecture"
 
-		file = open(os.path.dirname(os.path.realpath(__file__)) + "/sprueche.txt")
+        file = open(os.path.dirname(os.path.realpath(__file__)) + "/sprueche.txt")
         line = random_line(file)
         file.close()
 
