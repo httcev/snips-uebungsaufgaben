@@ -63,7 +63,7 @@ def action_wrapper(hermes, intentMessage, conf):
         result_sentence = line
 
     else:
-        result_sentence =  "Welche Vorlesung?"
+        result_sentence =  "Ich habe nicht verstanden, zu welcher Vorlesung ich eine Übungsaufgabe stellen soll."
 
     current_session_id = intentMessage.session_id
     hermes.publish_end_session(current_session_id, result_sentence)
