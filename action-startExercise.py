@@ -53,8 +53,9 @@ def action_wrapper(hermes, intentMessage, conf):
 
     if len(intentMessage.slots.lecture) > 0:
         lecture = intentMessage.slots.lecture.first().value # We extract the value from the slot "lecture"
+		lecture = lecture.replace(" ", "").lower()
 
-        file = open(os.path.dirname(os.path.realpath(__file__)) + "/uebungen.txt")
+        file = open(os.path.dirname(os.path.realpath(__file__)) + "/uebungen-" + lecture + ".txt")
         line = random_line(file)
         file.close()
 
@@ -62,7 +63,7 @@ def action_wrapper(hermes, intentMessage, conf):
         result_sentence = line
 
     else:
-        result_sentence =  "Welche Vorlesung"
+        result_sentence =  "Welche Vorlesung?"
 
     current_session_id = intentMessage.session_id
     hermes.publish_end_session(current_session_id, result_sentence)
